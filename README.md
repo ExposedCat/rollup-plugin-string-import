@@ -58,6 +58,27 @@ In runtime, all matching files will be imported as strings, same as if they were
 export default JSON.stringify('This is a text file content!');
 ```
 
+Optionally, you can create a `.d.ts` file to let TypeScript know that such imports should be treated as strings:
+
+```typescript
+// string-import.d.ts
+
+declare module '*.txt' {
+  const file: string;
+  export default file;
+}
+
+declare module '*.vert' {
+  const file: string;
+  export default file;
+}
+
+declare module '*.frag' {
+  const file: string;
+  export default file;
+}
+```
+
 ## Options
 
 ### `include`
