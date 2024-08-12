@@ -1,9 +1,9 @@
 {
-  "name": "barebone-ts",
+  "name": "rollup-plugin-string-import",
   "version": "1.0.0",
-  "description": "Any TypeScript project base",
+  "description": "Import any file as a string",
   "main": "dist/index.js",
-  "repository": "git@github.com:ExposedCat/barebone-ts.git",
+  "repository": "git@github.com:ExposedCat/rollup-plugin-string.git",
   "author": "Artem Prokop <artem.prokop.dev@gmail.com>",
   "license": "GPL-3.0-or-later",
   "private": false,
@@ -29,17 +29,20 @@
     "typecheck": "tsc --noEmit",
     "start": "npm run build && node .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "bg:start": "npm run build && pm2 start dist/index.js --name PROJECT",
-    "bg:restart": "npm run build && pm2 restart PROJECT",
-    "bg:logs": "pm2 logs PROJECT --lines 10000 -f"
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
-    "boilerplate",
+    "rollup",
+    "string",
+    "import",
     "typescript",
-    "ts",
-    "template",
-    "configuration"
+    "plugin"
   ],
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@rollup/pluginutils": "^5.1.0"
+  },
+  "peerDependencies": {
+    "rollup": "4.20.0"
+  }
 }
