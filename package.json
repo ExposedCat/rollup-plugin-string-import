@@ -1,0 +1,45 @@
+{
+  "name": "barebone-ts",
+  "version": "1.0.0",
+  "description": "Any TypeScript project base",
+  "main": "dist/index.js",
+  "repository": "git@github.com:ExposedCat/barebone-ts.git",
+  "author": "Artem Prokop <artem.prokop.dev@gmail.com>",
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^2.3.0",
+    "@tsconfig/recommended": "^1.0.7",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.14.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-functional": "^6.6.0",
+    "eslint-plugin-github": "^5.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react": "^7.34.3",
+    "eslint-plugin-sonarjs": "^1.0.3",
+    "prettier": "^3.3.2",
+    "prettier-eslint": "^16.3.0",
+    "typescript": "^5.5.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "start": "npm run build && node .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "bg:start": "npm run build && pm2 start dist/index.js --name PROJECT",
+    "bg:restart": "npm run build && pm2 restart PROJECT",
+    "bg:logs": "pm2 logs PROJECT --lines 10000 -f"
+  },
+  "keywords": [
+    "boilerplate",
+    "typescript",
+    "ts",
+    "template",
+    "configuration"
+  ],
+  "type": "module"
+}
