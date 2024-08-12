@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-string-import",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Import any file as a string",
   "main": "dist/index.js",
   "repository": "git@github.com:ExposedCat/rollup-plugin-string.git",
@@ -44,5 +44,8 @@
   },
   "peerDependencies": {
     "rollup": "4.20.0"
-  }
+  },
+  "files": [
+    "dist/*"
+  ]
 }

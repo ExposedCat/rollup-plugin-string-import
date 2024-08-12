@@ -22,3 +22,5 @@ export function importAsString(options: ImportAsStringOptions): Plugin {
     },
   };
 }
+
+export default importAsString;
