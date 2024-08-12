@@ -94,6 +94,24 @@ Default: `undefined`
 
 A [picomatch pattern](https://github.com/micromatch/picomatch), or array of patterns, which specifies the files in the build the plugin should _ignore_. By default no files are ignored.
 
+### `transform`
+
+Type: `(content: String, file: String) => String`<br>
+Default: `content => content`
+
+A transformer function that will be applied to each matched file. In this example, we append "Hello World" to each `.txt` file:
+
+```typescript
+...
+    importAsString({
+      include: ['**/*.txt', '**/*.frag', '**/*.vert'],
+      exclude: ['**/*.test.*'],
+      transform:
+        (content, file) => file.endsWith('.txt') ? `${content}\nHello World` : content,
+    }),
+...
+```
+
 ## Meta
 
 Licensed under the GPL version 3.0 or higher
