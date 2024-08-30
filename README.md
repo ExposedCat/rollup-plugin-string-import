@@ -55,7 +55,9 @@ Then call `rollup` either via the [CLI](https://www.rollupjs.org/guide/en/#comma
 In runtime, all matching files will be imported as strings, same as if they were defined in TypeScript files like this:
 
 ```typescript
-export default JSON.stringify('This is a text file content!');
+export default `This is a
+text file
+content!`;
 ```
 
 Optionally, you can create a `.d.ts` file to let TypeScript know that such imports should be treated as strings:

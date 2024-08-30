@@ -17,9 +17,9 @@ export function importAsString(options: ImportAsStringOptions): Plugin {
     name: 'importAsString',
     transform(code, id) {
       if (filter(id)) {
-        const content = JSON.stringify(transform(code, id));
+        const content = transform(code, id).replaceAll('`', '`');
         return {
-          code: `export default ${JSON.stringify(content)};`,
+          code: `export default \`${content}\`;`,
           map: { mappings: '' },
         };
       }
