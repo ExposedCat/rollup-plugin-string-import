@@ -17,7 +17,10 @@ export function importAsString(options: ImportAsStringOptions): Plugin {
     name: 'importAsString',
     transform(code, id) {
       if (filter(id)) {
-        const content = transform(code, id).replaceAll('`', '\\`');
+        const content = transform(code, id) //
+          .replaceAll('\\', '\\\\')
+          .replaceAll('`', '\\`');
+
         return {
           code: `export default \`${content}\`;`,
           map: { mappings: '' },
