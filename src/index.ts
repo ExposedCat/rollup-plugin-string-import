@@ -19,7 +19,8 @@ export function importAsString(options: ImportAsStringOptions): Plugin {
       if (filter(id)) {
         const content = transform(code, id) //
           .replaceAll('\\', '\\\\')
-          .replaceAll('`', '\\`');
+          .replaceAll('`', '\\`')
+          .replaceAll('${', '\\${');
 
         return {
           code: `export default \`${content}\`;`,
